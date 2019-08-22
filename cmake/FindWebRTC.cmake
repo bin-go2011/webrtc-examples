@@ -23,12 +23,12 @@ if(NOT WebRTC_ROOT)
 endif()
 
 if(NOT WebRTC_ROOT)
-  find_path(WebRTC_DIR NAMES webrtc.gni)
+  find_path(WEBRTC_DIR NAMES webrtc.gni)
 else()
-  set(WebRTC_DIR ${WebRTC_ROOT})
+  set(WEBRTC_DIR ${WebRTC_ROOT})
 endif()
 
-message(STATUS WebRTC_ROOT ${WebRTC_ROOT})
+message(STATUS WebRTC_ROOT ${WEBRTC_DIR})
 # WebRTC:: targets
 if(WEBRTC_FOUND)
     add_library(WebRTC::WebRTC INTERFACE IMPORTED)
