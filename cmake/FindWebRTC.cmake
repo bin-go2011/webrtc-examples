@@ -10,25 +10,32 @@
 #
 #
 #    This file will define the following variables:
-#      - WEBRTC_LIBS                     : The list of libraries to link against.
-#      - WEBRTC_INCLUDE_DIRS             : The WEBRTC include directories.
+#      - WebRTC_LIBRARIES                : The list of libraries to link against.
+#      - WebRTC_INCLUDE_DIRS             : The WEBRTC include directories.
 #
 # ===================================================================================
 if(POLICY CMP0074)
   cmake_policy(SET CMP0074 NEW)
 endif()
 
-if(NOT WebRTC_ROOT)
-  set(WebRTC_ROOT "$ENV{WebRTC_ROOT}")
+if(NOT WEBRTC_ROOT)
+  set(WEBRTC_ROOT "$ENV{WEBRTC_ROOT}")
 endif()
 
-if(NOT WebRTC_ROOT)
+if(NOT WEBRTC_ROOT)
   find_path(WEBRTC_DIR NAMES webrtc.gni)
-else()
-  set(WEBRTC_DIR ${WebRTC_ROOT})
 endif()
 
-message(STATUS WebRTC_ROOT ${WEBRTC_DIR})
+set(WebRTC_INCLUDE_DIRS ${WEBRTC_DIR})
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(WebRTC
+  FOUND_VAR
+    WebRTC_FOUND
+  REQUIRED_VARS
+    WebRTC_INCLUDE_DIRS
+    WebRTC_LIBRARIES
+)
 # WebRTC:: targets
 if(WEBRTC_FOUND)
     add_library(WebRTC::WebRTC INTERFACE IMPORTED)
