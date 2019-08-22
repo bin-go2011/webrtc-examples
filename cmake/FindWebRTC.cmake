@@ -23,9 +23,7 @@ if(NOT WebRTC_ROOT)
 endif()
 
 if(NOT WebRTC_ROOT)
-  find_path(_WebRTC_ROOT NAMES webrtc.gni)
-else()
-  set(_WebRTC_ROOT "${WebRTC_ROOT}")
+  find_path(WebRTC_ROOT NAMES webrtc.gni)
 endif()
 
 message(STATUS WebRTC_ROOT ${WebRTC_ROOT})
