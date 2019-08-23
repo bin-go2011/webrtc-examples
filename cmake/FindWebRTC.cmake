@@ -14,28 +14,26 @@
 #      - WebRTC_INCLUDE_DIRS             : The WEBRTC include directories.
 #
 # ===================================================================================
-if(POLICY CMP0074)
-  cmake_policy(SET CMP0074 NEW)
+if (DEFINED ENV{WEBRTC_ROOT_DIR})
+  set(WEBRTC_ROOT_DIR $ENV{WEBRTC_ROOT_DIR})
+  message("WEBRTC_ROOT_DIR = '${WEBRTC_ROOT_DIR}' from environment variable")
 endif()
 
-if(NOT WEBRTC_ROOT)
-  set(WEBRTC_ROOT "$ENV{WEBRTC_ROOT}")
+if ( "${WEBRTC_ROOT_DIR}" STREQUAL "")
+    message(FATAL_ERROR "A WEBRTC_ROOT_DIR is requred. \n"
+                        " ex) cmake .. -DWEBRTC_ROOT_DIR=/path/to/webrtc-checkout/src\n")
 endif()
 
-if(NOT WEBRTC_ROOT)
-  find_path(WEBRTC_DIR NAMES webrtc.gni)
-endif()
+find_path(WebRTC_INCLUDE_DIRS NAMES "webrtc.gni" PATHS "${WEBRTC_ROOT_DIR}"  NO_DEFAULT_PATH)
 
-set(WebRTC_INCLUDE_DIRS ${WEBRTC_DIR})
-
-include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(WebRTC
-  FOUND_VAR
-    WebRTC_FOUND
-  REQUIRED_VARS
-    WebRTC_INCLUDE_DIRS
-    WebRTC_LIBRARIES
-)
+# include(FindPackageHandleStandardArgs)
+# find_package_handle_standard_args(WebRTC
+#   FOUND_VAR
+#     WebRTC_FOUND
+#   REQUIRED_VARS
+#     WebRTC_INCLUDE_DIRS
+#     WebRTC_LIBRARIES
+# )
 # WebRTC:: targets
 if(WEBRTC_FOUND)
     add_library(WebRTC::WebRTC INTERFACE IMPORTED)
