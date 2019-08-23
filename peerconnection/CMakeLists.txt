@@ -1,11 +1,11 @@
 add_executable(peerconnection_server
-    server/data_socket.cc
-    server/data_socket.h
-    server/main.cc
-    server/peer_channel.cc
-    server/peer_channel.h
-    server/utils.cc
-    server/utils.h
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/data_socket.cc
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/data_socket.h
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/main.cc
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/peer_channel.cc
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/peer_channel.h
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/utils.cc
+${WEBRTC_ROOT_DIR}/examples/peerconnection/server/utils.h
 )
 
 target_include_directories(peerconnection_server PRIVATE ${WebRTC_INCLUDE_DIRS})
