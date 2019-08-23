@@ -26,14 +26,20 @@ endif()
 
 find_path(WebRTC_INCLUDE_DIRS NAMES "webrtc.gni" PATHS "${WEBRTC_ROOT_DIR}"  NO_DEFAULT_PATH)
 
-# include(FindPackageHandleStandardArgs)
-# find_package_handle_standard_args(WebRTC
-#   FOUND_VAR
-#     WebRTC_FOUND
-#   REQUIRED_VARS
-#     WebRTC_INCLUDE_DIRS
-#     WebRTC_LIBRARIES
-# )
+list(APPEND WEBRTC_INCLUDE_DIRS
+  "${WEBRTC_INCLUDE_DIRS}/third_party"
+  )
+
+find_library(WebRTC_LIBRARIES webrtc PATHS "${WEBRTC_ROOT_DIR}/out/Default/obj" NO_DEFAULT_PATH)
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(WebRTC
+  FOUND_VAR
+    WebRTC_FOUND
+  REQUIRED_VARS
+    WebRTC_INCLUDE_DIRS
+    WebRTC_LIBRARIES
+)
 # WebRTC:: targets
 if(WEBRTC_FOUND)
     add_library(WebRTC::WebRTC INTERFACE IMPORTED)
