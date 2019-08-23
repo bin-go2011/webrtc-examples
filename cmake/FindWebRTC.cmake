@@ -1,8 +1,6 @@
 
 # ===================================================================================
-#  The WebRTC CMake configuration file
-#
-#  Usage from an external project:
+#  The WebRTC CMake configuration file # #  Usage from an external project:
 #    In your CMakeLists.txt, add these lines:
 #
 #    FIND_PACKAGE(WebRTC REQUIRED)
@@ -26,9 +24,12 @@ endif()
 
 find_path(WebRTC_INCLUDE_DIRS NAMES "webrtc.gni" PATHS "${WEBRTC_ROOT_DIR}"  NO_DEFAULT_PATH)
 
-list(APPEND WEBRTC_INCLUDE_DIRS
-  "${WEBRTC_INCLUDE_DIRS}/third_party"
+list(APPEND WebRTC_INCLUDE_DIRS
+  "${WebRTC_INCLUDE_DIRS}/third_party"
+  "${WebRTC_INCLUDE_DIRS}/third_party/abseil-cpp"
   )
+
+message(STATUS ${WebRTC_INCLUDE_DIRS})
 
 find_library(WebRTC_LIBRARIES webrtc PATHS "${WEBRTC_ROOT_DIR}/out/Default/obj" NO_DEFAULT_PATH)
 

@@ -9,3 +9,4 @@ ${WEBRTC_ROOT_DIR}/examples/peerconnection/server/utils.h
 )
 
 target_include_directories(peerconnection_server PRIVATE ${WebRTC_INCLUDE_DIRS})
+target_link_libraries(peerconnection_server PRIVATE ${WebRTC_LIBRARIES} pthread c++)
