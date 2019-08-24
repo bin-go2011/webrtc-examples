@@ -6,56 +6,10 @@ ${WEBRTC_ROOT_DIR}/examples/peerconnection/server/peer_channel.cc
 ${WEBRTC_ROOT_DIR}/examples/peerconnection/server/peer_channel.h
 ${WEBRTC_ROOT_DIR}/examples/peerconnection/server/utils.cc
 ${WEBRTC_ROOT_DIR}/examples/peerconnection/server/utils.h
+${buildtools}
 )
 
 target_include_directories(peerconnection_server PRIVATE ${WebRTC_INCLUDE_DIRS})
-target_link_libraries(peerconnection_server PRIVATE ${WebRTC_LIBRARIES} pthread
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/utility.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/bind.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/functional.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/strstream.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/string.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/new.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/optional.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/random.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/debug.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/algorithm.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/thread.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/typeinfo.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/exception.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/chrono.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/system_error.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/any.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/iostream.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/variant.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/condition_variable.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/memory.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/future.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/hash.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/ios.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/valarray.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/stdexcept.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/mutex.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/vector.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/shared_mutex.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/regex.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++/libc++/locale.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/stdlib_stdexcept.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_virtual.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_handlers.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/private_typeinfo.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_unexpected.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_personality.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/abort_message.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/stdlib_typeinfo.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/stdlib_exception.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/fallback_malloc.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_exception.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_guard.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_default_handlers.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_vector.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_demangle.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_exception_storage.o
-/home/jiben/Documents/GitHub/webrtc-checkout/src/out/Default/obj/buildtools/third_party/libc++abi/libc++abi/cxa_aux_runtime.o
+target_link_libraries(peerconnection_server PRIVATE ${WebRTC_LIBRARIES} pthread 
 
 )
