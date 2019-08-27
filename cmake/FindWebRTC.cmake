@@ -29,9 +29,7 @@ list(APPEND WebRTC_INCLUDE_DIRS
   "${WebRTC_INCLUDE_DIRS}/third_party/abseil-cpp"
   )
 
-message(STATUS ${WebRTC_INCLUDE_DIRS})
-
-find_library(WebRTC_LIBRARIES webrtc PATHS "${WEBRTC_ROOT_DIR}/out/Default/obj" NO_DEFAULT_PATH)
+find_library(WebRTC_LIBRARIES NAMES webrtc_full PATHS "${WEBRTC_ROOT_DIR}/out/Default" NO_DEFAULT_PATH)
 
 message(STATUS found ${WebRTC_FOUND})
 # WebRTC:: targets
